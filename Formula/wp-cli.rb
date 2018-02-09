@@ -4,25 +4,25 @@ class WpCli < AbstractPhpPhar
   desc "Command-line tools for managing WordPress installations."
   homepage "https://wp-cli.org"
   url "https://github.com/wp-cli/wp-cli/releases/download/v1.5.0/wp-cli-1.5.0.phar"
-  sha512 "9385c63ab835c7c450529035cdb1f524b5878a67c7565c3497628e5ec4ec07ae4a34ef25c59a9e7d6edea7cdb039fcef7a1f731b922782b8c70418480bdff122"
+  sha256 "f615d57957e66a09f57acc844a1fc5402e9fa581dcb387bbe1affc4d155baf9d"
   head "https://github.com/wp-cli/wp-cli.git"
 
   bottle do
-	cellar :any_skip_relocation
-	sha512 "9385c63ab835c7c450529035cdb1f524b5878a67c7565c3497628e5ec4ec07ae4a34ef25c59a9e7d6edea7cdb039fcef7a1f731b922782b8c70418480bdff122" => :high_sierra
-	sha512 "9385c63ab835c7c450529035cdb1f524b5878a67c7565c3497628e5ec4ec07ae4a34ef25c59a9e7d6edea7cdb039fcef7a1f731b922782b8c70418480bdff122" => :sierra
-	sha512 "9385c63ab835c7c450529035cdb1f524b5878a67c7565c3497628e5ec4ec07ae4a34ef25c59a9e7d6edea7cdb039fcef7a1f731b922782b8c70418480bdff122" => :el_capitan
+    cellar :any_skip_relocation
+    sha256 "70954b082e4b806ba0ca0f78e19bcad2d4ee641d28f13ab6a0e5df82db135b4a" => :high_sierra
+    sha256 "70954b082e4b806ba0ca0f78e19bcad2d4ee641d28f13ab6a0e5df82db135b4a" => :sierra
+    sha256 "70954b082e4b806ba0ca0f78e19bcad2d4ee641d28f13ab6a0e5df82db135b4a" => :el_capitan
   end
 
   def phar_file
-	"wp-cli-#{version}.phar"
+    "wp-cli-#{version}.phar"
   end
 
   def phar_bin
-	"wp"
+    "wp"
   end
 
   test do
-	system "#{bin}/wp", "--info"
+    system "#{bin}/wp", "--info"
   end
 end
